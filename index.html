@@ -3,17 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A.D.E.N. - Assistant</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>A.D.E.N. – Your AI Assistant</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div class="container">
-    <h1>Welcome, Commander</h1>
-    <p>I am A.D.E.N., your personal assistant.</p>
-    <input type="text" id="userInput" placeholder="Type a message..." />
-    <button onclick="sendMessage()">Send</button>
+
+    <!-- 🔵 A.D.E.N. AI FACE -->
+    <div class="jarvis-face">
+      <div class="ring outer"></div>
+      <div class="ring mid"></div>
+      <div class="ring inner"></div>
+      <div class="core"></div>
+    </div>
+
+    <!-- 💬 CHAT DISPLAY -->
     <div id="chat-box"></div>
+
+    <!-- ⌨️ CHAT INPUT AREA -->
+    <div class="chat-input">
+      <input 
+        type="text" 
+        id="user-input" 
+        placeholder="Type your message..." 
+        onkeydown="if(event.key==='Enter'){sendMessage();}" 
+      />
+      <button onclick="sendMessage()">Send</button>
+      <button onclick="startListening()">🎤</button>
+    </div>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
